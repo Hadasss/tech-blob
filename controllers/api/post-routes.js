@@ -19,3 +19,13 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+// TODO get 1 post
+
+// TODO add post
+
+// TODO update post
+
+// TODO delete post
+
+module.exports = router;

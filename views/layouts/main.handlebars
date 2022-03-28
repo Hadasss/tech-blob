@@ -3,13 +3,100 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-blog-new-media-flaticons-flat-flat-icons.png"
+    />
     <title>Tech Blob</title>
   </head>
   <body>
 
     <header>
-      <h1>Tech Blob</h1>
+      <nav class="panel">
+        <p class="panel-heading has-text-centered is-size-3">
+          Tech Blob
+        </p>
+      </nav>
     </header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <img
+            src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-blog-new-media-flaticons-flat-flat-icons.png"
+          />
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true">Home</span>
+          <span aria-hidden="true">Login</span>
+          <span aria-hidden="true">Sign Up</span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                All Posts
+              </a>
+              <a class="navbar-item">
+                Write Post
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item">
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      {{{body}}}
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>&copy; Tech Blob</strong>
+          by
+          <a href="www.github.com/hadasss">Hadasss</a>.
+        </p>
+      </div>
+    </footer>
 
   </body>
 </html>

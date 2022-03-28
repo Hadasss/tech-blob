@@ -1,12 +1,17 @@
-<article class="post">
-  <div class="title">
-    {{title}}
+<article class="message is-warning">
+  <div class="message-header">
+    <p>{{title}}</p>
+    <div>
+      by
+      {{username}}
+      on
+      {{format_date created_at}}
+      |
+      <a href="/post/{{id}}">{{comments.length}}
+        {{format_plural "comment" comments.length}}</a>
+    </div>
   </div>
-  <div>
-    by
-    {{username}}
-    on
-    {{format_date created_at}}
+  <div class="message-body">
+    {{post_text}}
   </div>
-
 </article>

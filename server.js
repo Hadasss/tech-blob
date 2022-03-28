@@ -33,5 +33,5 @@ app.use(routes);
 // FYI .sync() means that sequelize is taking the models and connecting them to their associated tables in the db. if it doesn't find a table it creates one.
 // FYI force:true means that the db tables will be dropped and re-created on startup. same as DROP TABLE IF EXISTS in sql.
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log("Now listening"));
+  app.listen(PORT, () => console.log("Now listening on 3004"));
 });
