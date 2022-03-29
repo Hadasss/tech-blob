@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// TODO add comment
+// add comment
 router.post("/", (req, res) => {
   if (req.session) {
     Comment.create({

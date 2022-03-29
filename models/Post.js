@@ -29,11 +29,6 @@ Post.init(
         key: "id",
       },
     },
-    like: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0,
-      // TODO check how to set min value
-    },
   },
   {
     sequelize,

@@ -16,13 +16,13 @@ const postData = [
     title: "This is another one of Steve's posts",
     post_text:
       "a lot of text a lot of text a lot of text a lot of text a lot of text a lot of text a lot of text a of t t a a lot of text",
-    user_id: 2,
+    user_id: 3,
   },
   {
     title: "The weather today",
     post_text:
       "a lot of text a lot of text a lot of text a lot of text a lot of text a lot of text a lot of text a lxt a l lot of text",
-    user_id: 1,
+    user_id: 3,
   },
 ];
 

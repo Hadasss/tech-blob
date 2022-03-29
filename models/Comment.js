@@ -32,6 +32,10 @@ Comment.init(
         key: "id",
       },
     },
+    // like: {
+    //   type: DataTypes.INTEGER,
+    //   defaultValue: 0,
+    // },
   },
   {
     sequelize,
