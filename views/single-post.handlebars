@@ -2,13 +2,16 @@
   <div class="message-header">
     <p>{{post.title}}</p>
   </div>
+  <div class="message-body">
+    {{post.post_text}}
+  </div>
 </article>
 
 {{#if loggedIn}}
   <form class="comment-form">
 
     <div class="field">
-      <label class="label">Message</label>
+      <label class="label">Comment</label>
       <div class="control">
         <textarea
           name="comment-body"
@@ -33,10 +36,6 @@
 <div class="comments">
   {{#each post.comments}}
     <article class="message is-warning mb-3">
-      <div>
-        {{user.username}}
-      </div>
-
       <div class="message-body">
         {{comment_text}}
         <p class="is-italic has-text-right">
@@ -44,15 +43,12 @@
           {{user.username}}
           on
           {{format_date created_at}}
-
         </p>
       </div>
-
     </article>
   {{/each}}
 </div>
 
 {{#if loggedIn}}
   <script src="/javascript/comment.js"></script>
-  {{! TODO add like script }}
 {{/if}}
