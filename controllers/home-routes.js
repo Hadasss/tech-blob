@@ -34,7 +34,7 @@ router.get("/", (req, res) => {
     .then((dbPostData) => {
       console.log(dbPostData[0]);
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("homepage", { posts });
+      res.render("homepage", { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -51,7 +51,47 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
   res.render("signup");
+});
+
+router.get("/posts/:id", (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "title", "created_at"],
+    // TODO add sequelize for Like model
+    include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "user_id", "post_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No post was found with this id" });
+        return;
+      }
+      const post = dbPostData.get({ plain: true });
+      res.render("single-post", { post, loggedIn: req.session.loggedIn });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

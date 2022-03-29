@@ -36,10 +36,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [6],
+        len: [4],
       },
     },
-    // TODO read about hooks again + beforeCreate/beforeUpdate
   },
   {
     hooks: {

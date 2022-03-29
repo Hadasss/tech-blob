@@ -26,8 +26,13 @@ Post.init(
       type: DataTypes.INTEGER,
       references: {
         model: "user",
-        hey: "id",
+        key: "id",
       },
+    },
+    like: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      // TODO check how to set min value
     },
   },
   {

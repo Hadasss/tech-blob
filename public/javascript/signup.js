@@ -17,6 +17,7 @@ async function signupFormHandler(e) {
     });
     if (response.ok) {
       console.log("user added");
+      window.location.replace("/");
     } else {
       alert(response.statusText);
     }

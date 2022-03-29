@@ -20,8 +20,6 @@ router.get("/", (req, res) => {
     });
 });
 
-// TODO get 1 post
-
 // TODO add post
 
 // TODO update post

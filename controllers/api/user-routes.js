@@ -97,7 +97,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// TODO delete user
+// delete user
 router.delete("/:id", (req, res) => {
   User.destroy({
     where: { id: req.params.id },

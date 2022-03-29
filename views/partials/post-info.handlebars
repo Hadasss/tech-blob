@@ -3,11 +3,11 @@
     <p>{{title}}</p>
     <div>
       by
-      {{username}}
+      {{user.username}}
       on
       {{format_date created_at}}
       |
-      <a href="/post/{{id}}">{{comments.length}}
+      <a href="/posts/{{id}}">{{comments.length}}
         {{format_plural "comment" comments.length}}</a>
     </div>
   </div>
