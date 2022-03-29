@@ -4,7 +4,18 @@ const { User, Post, Comment, Like } = require("../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
-    attributes: ["id", "title", "post_text", "created_at"],
+    attributes: [
+      "id",
+      "title",
+      "post_text",
+      "created_at",
+      // [
+      //   sequelize.literal(
+      //     `SELECT COUNT (*) FROM posts WHERE post.id = like.post_id`
+      //   ),
+      //   "liked_posts",
+      // ],
+    ],
     include: [
       {
         model: Comment,
@@ -29,6 +40,18 @@ router.get("/", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
+});
+
+router.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
 module.exports = router;
