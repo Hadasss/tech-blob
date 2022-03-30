@@ -1,13 +1,23 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
+const withAuth = require("../../utils/auth");
 const { User, Post, Comment } = require("../../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
+    attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {
         model: Comment,
-        attributes: ["comment_text"],
+        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username"],
       },
     ],
   })
@@ -20,10 +30,43 @@ router.get("/", (req, res) => {
     });
 });
 
-// TODO add post
+// add post
+router.post("/", withAuth, (req, res) => {
+  Post.create({
+    title: req.body.title,
+    post_text: req.body.post_text,
+    user_id: req.session.user_id,
+  })
+    .then((dbPostData) => {
+      res.json(dbPostData);
+    })
+    .catch((err) => res.status(500).json(err));
+});
 
-// TODO update post
+// // update post
+// router.put("/:id", withAuth, (req, res) => {
+//   Post.update(
+//     {
+//       title: req.body.title,
+//       post_text: req.body.post_text,
+//     },
+//     {
+//       where: {
+//         id: req.params.id,
+//       },
+//     }
+//   )
+//     .then((dbPostData) => {
+//       if (!dbPostData) {
+//         res.status(404).json({ message: "No post was found" });
+//         return;
+//       }
+//       res.json(dbPostData);
+//       res.redirect("/dashboard");
+//     })
+//     .catch((err) => res.status(500).json(err));
+// });
 
-// TODO delete post
+// // TODO delete post
 
 module.exports = router;

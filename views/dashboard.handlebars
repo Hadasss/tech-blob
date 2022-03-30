@@ -1,10 +1,11 @@
 <section>
   <h2 class="title is-2 mb-6">Create New Post</h2>
+<form class="add-post-form">
 
   <div class="field">
     <label class="label">Title</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input is-warning" type="text" placeholder="Text input" />
+    <div class="control has-icons-right">
+      <input class="input is-warning" type="text" name="post-title" placeholder="Text input" />
       <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
       </span>
@@ -17,19 +18,23 @@
   <div class="field">
     <label class="label">Post Text</label>
     <div class="control">
-      <textarea class="textarea" placeholder="Textarea"></textarea>
+      <textarea class="textarea" placeholder="Textarea" name="textarea" value="{{post.post_text}}"></textarea>
     </div>
   </div>
 
   <div class="control">
-    <button class="button is-warning">Create</button>
+    <button type="submit" class="button is-warning">Create</button>
   </div>
+
+
+</form>
+
 </section>
 
-{{#if posts.length}}
   <section>
-    <h2 class="title is-3 mb-6">Your Posts</h2>
+    <h2 class="title is-3 mt-6">Your Posts</h2>
 
+{{#if posts.length}}
     <ul>
         {{#each posts as |post|}}
         <li>
@@ -38,5 +43,7 @@
         </li>
         {{/each}}
     </ul>
-  </section>
 {{/if}}
+  </section>
+
+<script src="/javascript/add-post.js"></script>
