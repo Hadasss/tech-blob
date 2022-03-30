@@ -39,7 +39,7 @@
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}">Edit post</a>
+            <a class="m-0" href="/dashboard/edit/{{post.id}}">Edit\Delete post</a>
         </li>
         {{/each}}
     </ul>
@@ -47,3 +47,6 @@
   </section>
 
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post"></script>
+<script src="javascript/comment"></script>

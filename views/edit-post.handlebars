@@ -23,42 +23,30 @@
     <div class="field">
       <label class="label">Post Text</label>
       <div class="control">
-        <textarea class="textarea" placeholder="Textarea" name="textarea" value="{{post.post_text}}"></textarea>
+        <textarea
+          class="textarea"
+          placeholder="Textarea"
+          name="textarea"
+          value="{{post.post_text}}"
+        ></textarea>
       </div>
     </div>
     <div>
-<p class="ml-1 is-italic">
-      by you on
-      {{format_date post.created_at}}
-      |
-      <a href="/post/{{post.id}}">{{post.comments.length}}
-        {{format_plural "comment" post.comments.length}}</a>
-
-</p>
+      <p class="ml-1 is-italic">
+        by you on
+        {{format_date post.created_at}}
+        |
+        <a href="/post/{{post.id}}">{{post.comments.length}}
+          {{format_plural "comment" post.comments.length}}</a>
+      </p>
     </div>
     <div class="control">
-      <button class="mr-4 button is-warning">Update Post</button>
-      <button class="button is-warning">Delete Post</button>
-      
+      <button type="submit" class="mr-4 button is-warning">Update Post</button>
+      <button id="delete" class="button is-warning">Delete Post</button>
     </div>
   </form>
 </section>
 
-<section>
-
-  {{!-- <form class="comment-form">
-    <div>
-      <textarea name="comment-body"></textarea>
-    </div>
-
-    <div>
-      <button type="submit">add comment</button>
-    </div>
-  </form>
-  {{> comments post.comments}}
-</section> --}}
-
 <script src="/javascript/edit-post.js"></script>
-<script src="/javascript/add-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>

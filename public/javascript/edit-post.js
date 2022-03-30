@@ -1,26 +1,30 @@
 async function editPostHandler(e) {
   e.preventDefault();
-
+  console.log("clicked");
   const title = document
     .querySelector(".input[name='post-title']")
     .value.trim();
+  const post_text = document
+    .querySelector(".textarea[name='textarea']")
+    .value.trim();
+
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
 
   const response = await fetch(`/api/posts/${id}`, {
     method: "PUT",
-    body: JSON.stringify({ title }),
+    body: JSON.stringify({ title, post_text }),
     headers: { "Content-Type": "application/json" },
   });
 
   if (response.ok) {
-    document.location.replace("/dashboard/");
+    window.location.redirect("/dashboard/");
   } else {
     alert(response.statusText);
   }
 }
 
 document
-  .querySelector(".edit-form")
+  .querySelector(".edit-post-form")
   .addEventListener("submit", editPostHandler);
