@@ -19,7 +19,8 @@ async function editPostHandler(e) {
   });
 
   if (response.ok) {
-    window.location.redirect("/dashboard/");
+    window.location.href = "/dashboard/";
+    // window.location.redirect("/dashboard/");
   } else {
     alert(response.statusText);
   }

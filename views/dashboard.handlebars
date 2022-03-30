@@ -5,7 +5,7 @@
   <div class="field">
     <label class="label">Title</label>
     <div class="control has-icons-right">
-      <input class="input is-warning" type="text" name="post-title" placeholder="Text input" />
+      <input class="input is-warning" type="text" name="post-title" placeholder="Text input"/>
       <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
       </span>
@@ -18,7 +18,7 @@
   <div class="field">
     <label class="label">Post Text</label>
     <div class="control">
-      <textarea class="textarea" placeholder="Textarea" name="textarea" value="{{post.post_text}}"></textarea>
+      <textarea class="textarea" placeholder="Textarea" name="text-area"></textarea>
     </div>
   </div>
 
@@ -38,15 +38,13 @@
     <ul>
         {{#each posts as |post|}}
         <li>
-            {{> post-info post}}
             <a class="m-0" href="/dashboard/edit/{{post.id}}">Edit\Delete post</a>
+            {{> post-info post}}
         </li>
         {{/each}}
     </ul>
 {{/if}}
   </section>
 
-<script src="/javascript/add-post.js"></script>
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post"></script>
-<script src="javascript/comment"></script>
+
+<script src="javascript/add-post.js"></script>

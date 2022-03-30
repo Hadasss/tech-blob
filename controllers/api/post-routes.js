@@ -68,7 +68,7 @@ router.put("/:id", withAuth, (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-// // TODO delete post
+// delete post
 router.delete("/:id", withAuth, (req, res) => {
   Post.destroy({
     where: {
