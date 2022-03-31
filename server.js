@@ -17,6 +17,10 @@ const sess = {
     db: sequelize,
   }),
 };
+// set session expiration
+var hour = 3600000;
+req.session.cookie.expires = new Date(Date.now() + hour);
+req.session.cookie.maxAge = hour;
 
 const app = express();
 const PORT = process.env.PORT || 3004;
