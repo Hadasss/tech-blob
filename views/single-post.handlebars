@@ -1,6 +1,11 @@
 {{> post-info post}}
 
 {{#if loggedIn}}
+  <div class="control mb-5">
+    <button type="submit" class="mr-4 button is-danger">Update Post</button>
+    <button type="button" id="delete" class="button is-danger">Delete Post</button>
+  </div>
+
   <form class="comment-form">
 
     <div class="field">
@@ -30,7 +35,7 @@
         {{comment_text}}
         <p class="is-italic has-text-right">
           by
-          {{user.username}}
+          <strong>{{user.username}}</strong>
           on
           {{format_date created_at}}
         </p>
@@ -39,7 +44,11 @@
   {{/each}}
 </div>
 
+
+
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
 {{/if}}
 

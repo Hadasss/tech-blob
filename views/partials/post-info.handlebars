@@ -1,14 +1,16 @@
 <article class="message is-warning">
   <div class="message-header">
-    <p>{{title}}</p>
+    <a href="/posts/{{id}}"><p style="text-decoration:none">{{title}}</p></a>
     <div>
-      by
-      {{user.username}}
-      on
-      {{format_date created_at}}
-      |
-      <a href="/posts/{{id}}">{{comments.length}}
-        {{format_plural "comment" comments.length}}</a>
+      <p class="has-text-weight-normal is-italic has-text-right">
+        by
+        <strong>{{user.username}}</strong>
+        on
+        {{format_date created_at}}
+        |
+        <a href="/posts/{{id}}">{{comments.length}}
+          {{format_plural "comment" comments.length}}</a>
+      </p>
     </div>
   </div>
   <div class="message-body">

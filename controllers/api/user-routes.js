@@ -83,6 +83,10 @@ router.post("/", (req, res) => {
     password: req.body.password,
   })
     .then((dbUserData) => {
+      // if (password.length < 4) {
+      //   document.querySelector(".modal").classList.remove("hidden");
+      //   document.querySelector(".modal").classList.add("visible");
+      // }
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
