@@ -2,7 +2,7 @@ async function editPostHandler(e) {
   e.preventDefault();
   console.log("clicked");
   const title = document.querySelector(".input[name='post-title']").value;
-  const post_text = document.querySelector(".textarea[name='textarea']").value;
+  const post_text = document.querySelector(".textarea").value;
 
   const response = await fetch("/api/posts", {
     method: "POST",
@@ -14,8 +14,7 @@ async function editPostHandler(e) {
   });
 
   if (response.ok) {
-    window.location.href = "/dashboard/";
-    // document.location.replace("/dashboard");
+    window.location.href = "/dashboard";
   } else {
     alert(response.statusText);
   }

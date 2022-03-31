@@ -4,9 +4,7 @@ async function editPostHandler(e) {
   const title = document
     .querySelector(".input[name='post-title']")
     .value.trim();
-  const post_text = document
-    .querySelector(".textarea[name='textarea']")
-    .value.trim();
+  const post_text = document.querySelector(".textarea").value.trim();
 
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
@@ -20,7 +18,6 @@ async function editPostHandler(e) {
 
   if (response.ok) {
     window.location.href = "/dashboard/";
-    // window.location.redirect("/dashboard/");
   } else {
     alert(response.statusText);
   }

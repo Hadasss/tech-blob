@@ -63,7 +63,6 @@ router.put("/:id", withAuth, (req, res) => {
         return;
       }
       res.json(dbPostData);
-      res.redirect("/dashboard");
     })
     .catch((err) => res.status(500).json(err));
 });
