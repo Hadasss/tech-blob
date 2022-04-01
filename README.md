@@ -21,6 +21,9 @@ npm i
 
 npm run seed (optional)
 
+## Usage
+Blogging blast! Read, comment and create your own content. 
+
 ## Tests
 
 There are no tests for this program.
