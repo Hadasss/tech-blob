@@ -10,13 +10,4 @@ module.exports = {
     }
     return word;
   },
-
-  // active: (req: Request, res: Response, next: NextFunction) => {
-  //  if (is loggedIn(req)) {
-  //    const now = Date.now()
-  //    const {createdAt} = req.session as Express.session
-
-  //    if (now > createdAt + SESSION_ABSOLUTE_TIMEOUT){}
-  //  }
-  // }
 };
