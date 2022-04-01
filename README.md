@@ -33,7 +33,7 @@ There are no tests for this program.
 ![image](https://user-images.githubusercontent.com/80355222/161120927-64d0e2b1-4e97-4398-9eb1-0ee7a983a823.png)
 
 
-## Live Deployment
+## Deployment
 https://tech-blob.herokuapp.com/
 
 ## Questions
