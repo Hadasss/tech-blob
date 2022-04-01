@@ -12,7 +12,7 @@ Users who wish to post and comment can do so after signing up.
 - [App Usage](#usage)
 - [Tests](#tests)
 - [Screenshots](#screenshots)
-- [Live Deployment](#live desloyment)
+- [Deployment](#deployment)
 - [Questions](#questions)
 
 ## Installation
