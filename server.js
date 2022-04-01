@@ -10,19 +10,13 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: process.env.SECRET,
-  cookie: { maxAge: 60000 },
+  cookie: { expires: 3600000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
   }),
 };
-// set session expiration
-// const hour = 3600000;
-// app.use(express.session({secret:SECRET, cookie:{maxAge:6000}}));
-// const minute = 60000;
-// req.session.cookie.expires = new Date(Date.now() + hour);
-// req.session.cookie.maxAge = hour;
 
 const app = express();
 const PORT = process.env.PORT || 3004;
