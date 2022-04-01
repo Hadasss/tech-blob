@@ -25,8 +25,12 @@ npm run seed (optional)
 There are no tests for this program.
 
 ## Screenshots
+![image](https://user-images.githubusercontent.com/80355222/161120675-5d710857-5340-45f6-a3c0-d043f2d09779.png)
+![image](https://user-images.githubusercontent.com/80355222/161120927-64d0e2b1-4e97-4398-9eb1-0ee7a983a823.png)
+
 
 ## Live Deployment
+https://tech-blob.herokuapp.com/
 
 ## Questions
 
