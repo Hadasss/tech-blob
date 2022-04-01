@@ -18,6 +18,7 @@ Users who wish to post and comment can do so after signing up.
 ## Installation
 
 npm i
+
 npm run seed (optional)
 
 ## Tests
