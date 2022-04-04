@@ -64,6 +64,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
         }
 
         const post = dbPostData.get({ plain: true });
+        console.log(post);
         res.render("edit-post", { post, loggedIn: req.session.loggedIn });
       })
       .catch((err) => res.status(500).json(err));
